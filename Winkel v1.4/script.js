@@ -1,18 +1,17 @@
-// Vul hier de paden naar de afbeeldingen die in je tab "photos" staan.
-// Als je andere bestandsnamen gebruikt, zet die hier (relatief pad vanaf index.html).
+
 const IMAGES = {
-  "trench-coat": "IMAGES/assetsphotostrench-coat.png.png",      // #edit: vervang als nodig
-  "white-shirt": "IMAGES/assetsphotoswhite-shirt.png.png",      // #edit
-  "charcoal-rollneck": "IMAGES/assetsphotoscharcoal-rollneck.png.png", // #edit
-  "charcoal-blazer": "IMAGES/assetsphotoscharcoal-blazer.png.png",     // #edit
-  "brown-crewneck": "images/assetsphotosbrown-crewneck.png.png",       // #edit
-  "navy-trousers": "IMAGES/assetsphotosnavy-trousers.png.png",         // #edit
-  "brown-oxfords": "IMAGES/assetsphotosbrown-oxfords.png.png",         // #edit
-  "leather-belt": "IMAGES/assetsphotoscognac-riem.png.png"           // #edit
+  "trench-coat": "IMAGES/assetsphotostrench-coat.png.png",    
+  "white-shirt": "IMAGES/assetsphotoswhite-shirt.png.png",     
+  "charcoal-rollneck": "IMAGES/assetsphotoscharcoal-rollneck.png.png", 
+  "charcoal-blazer": "IMAGES/assetsphotoscharcoal-blazer.png.png",     
+  "brown-crewneck": "images/assetsphotosbrown-crewneck.png.png",       
+  "navy-trousers": "IMAGES/assetsphotosnavy-trousers.png.png",         
+  "brown-oxfords": "IMAGES/assetsphotosbrown-oxfords.png.png",         
+  "leather-belt": "IMAGES/assetsphotoscognac-riem.png.png"         
 };
 
 function resolveImage(key, fallbackQuery) {
-  // Als IMAGES[key] leeg is gebruiken we een Unsplash fallback (geen crash)
+ 
   if (IMAGES[key] && IMAGES[key].trim() !== "") return IMAGES[key];
   return `https://source.unsplash.com/800x1066/?${encodeURIComponent(fallbackQuery)}`;
 }
@@ -691,7 +690,7 @@ function bootstrap() {
   initNavigation();
   accessForm.addEventListener("submit", handleAccessSubmit);
 
-  // Zorg dat hero afbeelding zichtbaar is (fallback naar trench-coat asset)
+
   try {
     const heroImg = document.getElementById("hero-image");
     if (heroImg) {
@@ -699,8 +698,9 @@ function bootstrap() {
       heroImg.alt = productMap["trench-coat"]?.name ?? "Camel trenchcoat";
     }
   } catch (e) {
-    // noop
+ 
   }
 }
+
 
 bootstrap();
